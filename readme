@@ -1,0 +1,10 @@
+D:\virtualEnvs\envgit\env\Scripts\activate.bat
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker1
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker2
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker3
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker4
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker5
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker6
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker7
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker8
+celery  -A tasks worker --loglevel=info --concurrency=10 -n worker9
