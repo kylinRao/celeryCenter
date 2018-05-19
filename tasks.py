@@ -15,9 +15,9 @@ app = Celery('tasks',  backend='redis://192.168.1.112:6379/0', broker='redis://1
 def add(x, y):
     return x + y
 @app.task
-def execute(sql):
+def execute(sql,metaList):
     conn = MySQLdb.connect("192.168.1.112", "admin", "Huawei123", "adminserver", charset='utf8' )
     cur =conn.cursor()
-    cur.execute(sql)
+    cur.executemany(sql,metaList)
     conn.commit()
     conn.close()

@@ -6,6 +6,13 @@
 # @File    : exeTask.py
 # @Software: PyCharm
 from tasks import execute
-sqltemp = "replace into test VALUES ({id},'name{id}','des');"
-for id in xrange(100000,2000000):
-    execute(sqltemp.format(id=id))
+sqltemp = "replace into test VALUES (%s,%s,'des');"
+metaList = []
+count = 0
+for id in xrange(1,10000001):
+    metaList.append((id,"name"+str(id)))
+    if id%100000 == 0:
+        count = count +1
+        print count
+        execute.delay(sqltemp,metaList)
+        metaList=[]
